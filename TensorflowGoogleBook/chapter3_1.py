@@ -2,7 +2,7 @@
 # @Author: [ShuaiYang]
 # @Date:   2019-04-11 19:09:13
 # @Last Modified by:   [ShuaiYang]
-# @Last Modified time: 2019-04-11 20:01:54
+# @Last Modified time: 2019-04-15 19:12:23
 import tensorflow as tf;
 
 print("-----------------通过计算机图 对数据进行隔离计算---------------------------")
@@ -36,6 +36,4 @@ result = tf.add(a, b)
 print("-->",result)
 
 print("-------------------------Session 会话------------------------------------")
-
-# 使用session的过程中必须使用 with tf.Session() 的形式，tf使用python的上下文管理来管理会话，只要在with中就不需要调用 Session.close()
 
