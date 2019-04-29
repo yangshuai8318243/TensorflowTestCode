@@ -2,8 +2,9 @@
 # @Author: [ShuaiYang]
 # @Date:   2019-04-22 20:00:51
 # @Last Modified by:   [ShuaiYang]
-# @Last Modified time: 2019-04-22 20:03:20
+# @Last Modified time: 2019-04-23 18:50:51
 import tensorflow as tf;
+#没有包可以去 可视化工具包中下载
 from numpy.random import RandomState
 
 # 定义训练数据大小
@@ -25,6 +26,6 @@ sess = tf.Session()
 with sess.as_default():
 	init_op = tf.initialize_all_variables()
 	sess.run(init_op)
-	cross_entropy = tf.reduce_mean(y_* tf.log(tf.clip_by_value(y,le-10,1.0)))
+	cross_entropy = tf.reduce_mean(y_* tf.log(tf.clip_by_value(y,11-10,1.0)))
 	# print(sess.run(y,feed_dict = {x:[[0.7,0.9]]}))
 	print(sess.run(y,feed_dict = {x:[[0.7,0.9],[0.1,0.3],[0.5,0.9]]}))
