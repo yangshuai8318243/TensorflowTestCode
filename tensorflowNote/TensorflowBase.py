@@ -2,7 +2,8 @@
 # @Author: [ShuaiYang]
 # @Date:   2019-04-24 16:54:57
 # @Last Modified by:   [ShuaiYang]
-# @Last Modified time: 2019-05-13 18:21:01
+#https://github.com/MorvanZhou/tutorials.git
+# @Last Modified time: 2019-05-13 18:22:32
 # 
 # https://morvanzhou.github.io/tutorials
 import tensorflow as tf
