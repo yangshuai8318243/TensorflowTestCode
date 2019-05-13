@@ -2,7 +2,9 @@
 # @Author: [ShuaiYang]
 # @Date:   2019-04-24 16:54:57
 # @Last Modified by:   [ShuaiYang]
-# @Last Modified time: 2019-04-24 16:55:10
+# @Last Modified time: 2019-05-13 18:21:01
+# 
+# https://morvanzhou.github.io/tutorials
 import tensorflow as tf
 import numpy as np
 #tensorflow中大部分数据是float32
