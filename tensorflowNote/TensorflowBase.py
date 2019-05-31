@@ -3,13 +3,12 @@
 # @Date:   2019-04-24 16:54:57
 # @Last Modified by:   [ShuaiYang]
 #https://github.com/MorvanZhou/tutorials.git
-# @Last Modified time: 2019-05-13 18:22:32
+# @Last Modified time: 2019-05-30 16:36:31
 # 
 # https://morvanzhou.github.io/tutorials
 import tensorflow as tf
 import numpy as np
 #tensorflow中大部分数据是float32
-
 #create real data
 x_data = np.random.rand(100).astype(np.float32)
 y_data = x_data * 0.1 + 0.3
