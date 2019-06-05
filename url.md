@@ -4,7 +4,7 @@ https://github.com/cj0012/AI-Practice-Tensorflow-Notes.git   ai学习笔记，da
 统计学习方法 李航
 
 人工智能学习  https://www.bilibili.com/video/av49122347/?p=4
-
+机器学习（Machine Learning）- 吴恩达（Andrew Ng） https://study.163.com/course/courseLearn.htm?courseId=1004570029#/learn/video?lessonId=1049105135&courseId=1004570029
 导数概念 https://www.bilibili.com/video/av47041478/?p=1
 导数运算 https://www.bilibili.com/video/av47041478/?p=2
 复合函数求导  https://www.bilibili.com/video/av51155730?from=search&seid=116688389012330861
@@ -15,5 +15,19 @@ sigmoid 函数  自己尝试求导
 非线性
 
 线性代数
-高斯分布
+特征值分解 svd分解
+变换与逆矩阵
+P与P的乘积
+相似矩阵
+
 概率论
+大数定理
+条件概率
+全概率
+贝叶斯公式
+期望，方差 https://www.bilibili.com/video/av14792156?from=search&seid=18395628059328435065
+协方差
+
+二项分布
+高斯分布
+熵 https://www.bilibili.com/video/av25408872?from=search&seid=1008940797012851399
