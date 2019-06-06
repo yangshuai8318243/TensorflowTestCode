@@ -5,6 +5,8 @@ https://github.com/cj0012/AI-Practice-Tensorflow-Notes.git   ai学习笔记，da
 
 人工智能学习  https://www.bilibili.com/video/av49122347/?p=4
 机器学习（Machine Learning）- 吴恩达（Andrew Ng） https://study.163.com/course/courseLearn.htm?courseId=1004570029#/learn/video?lessonId=1049105135&courseId=1004570029
+Matlab - Matlab 2016a 安装破解教程 https://blog.csdn.net/u012313335/article/details/73733651
+Octave的下载地址 https://ftp.gnu.org/gnu/octave/windows/
 导数概念 https://www.bilibili.com/video/av47041478/?p=1
 导数运算 https://www.bilibili.com/video/av47041478/?p=2
 复合函数求导  https://www.bilibili.com/video/av51155730?from=search&seid=116688389012330861
