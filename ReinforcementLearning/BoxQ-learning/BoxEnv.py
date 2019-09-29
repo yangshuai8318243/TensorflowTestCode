@@ -2,7 +2,7 @@
 # @Author: [ShuaiYang]
 # @Date:   2019-09-25 17:41:45
 # @Last Modified by:   [ShuaiYang]
-# @Last Modified time: 2019-09-27 16:49:53
+# @Last Modified time: 2019-09-29 16:57:47
 
 
 import numpy as np
@@ -160,6 +160,21 @@ class Box(tk.Tk,object):
             origin[0] - 15, origin[1] - 15,
             origin[0] + 15, origin[1] + 15,
             fill='red')
+
+		posArr = [self.canvas.coords(self.hell1),self.canvas.coords(self.hell2)];
+
+		self.canvas.delete(self.hell1)
+		self.hell1 = self.canvas.create_rectangle(
+			posArr[0][0], posArr[0][1],
+			posArr[0][2], posArr[0][3],
+			fill = "black")
+
+		self.canvas.delete(self.hell2)
+		self.hell2 = self.canvas.create_rectangle(
+			posArr[1][0], posArr[1][1],
+			posArr[1][2], posArr[1][3],
+			fill = "black")
+
 		# 重新设置item的坐标
 		# 返回对应坐标
 		return self.canvas.coords(self.rect)
@@ -182,35 +197,51 @@ class Box(tk.Tk,object):
 				base_action[0] += UNIT
 		elif acction == 3 : #left
 			if pos[0] > UNIT:
-				base_action -= UNIT
+				base_action[0] -= UNIT
 		# 绘制玩家当前位置
 		self.canvas.move(self.rect, base_action[0] , base_action[1])
 
 		# 确认玩家在当前画布中的位置
 		pos_ = self.canvas.coords(self.rect)
-
+		posArr = [self.canvas.coords(self.hell1),self.canvas.coords(self.hell2)];
 		#判断玩家是否接触到其他物体
 		if pos_ == self.canvas.coords(self.oval):
 			reward = 1
 			done = True
 			state = "terminal"
 		# 判断某个表或者变量是否在这个数组中
-		elif pos_  in [self.canvas.coords(self.hell1),self.canvas.coords(self.hell2)]:
+		elif pos_  in posArr:
 			reward = -1
 			done = True
 			state = "terminal"
+			hallIndex = posArr.index(pos_)
+			hallPos = posArr[hallIndex]
+			if hallIndex == 0 :
+				self.canvas.delete(self.hell1)
+				self.hell1 = self.canvas.create_rectangle(
+					hallPos[0], hallPos[1],
+					hallPos[2], hallPos[3],
+					fill = "blue")
+
+			elif hallIndex == 1:
+				self.canvas.delete(self.hell2)
+				self.hell2 = self.canvas.create_rectangle(
+					hallPos[0], hallPos[1],
+					hallPos[2], hallPos[3],
+					fill = "blue")
 
 		else:
 			reward = 0
 			done = False
-			state = "terminal"
+			state = pos_
 		pass
 
 		return state , reward , done
 
 	def render(self):
-		time.sleep(0.1)
 		self.update()
+		time.sleep(0.1)
+		
 		pass
 
 
