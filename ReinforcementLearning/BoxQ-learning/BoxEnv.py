@@ -2,7 +2,7 @@
 # @Author: [ShuaiYang]
 # @Date:   2019-09-25 17:41:45
 # @Last Modified by:   [ShuaiYang]
-# @Last Modified time: 2019-09-29 16:57:47
+# @Last Modified time: 2019-09-29 17:16:03
 
 
 import numpy as np
@@ -18,8 +18,8 @@ import random
 
 
 UNIT = 50 #每个格子所占的像素
-MAZE_H = 5 #环境的高度的格子数
-MAZE_W = 5 #环境的宽度的格子数
+MAZE_H = 4 #环境的高度的格子数
+MAZE_W = 4 #环境的宽度的格子数
 #起点位置
 origin = np.array([UNIT * 0.5,UNIT*0.5])
 
@@ -142,8 +142,8 @@ class Box(tk.Tk,object):
 
 
 	def _random_index(self):
-		x = random.randint(0,4)
-		y = random.randint(0,4)
+		x = random.randint(0,MAZE_W-1)
+		y = random.randint(0,MAZE_H-1)
 		return x, y
 		pass
 
@@ -209,39 +209,42 @@ class Box(tk.Tk,object):
 			reward = 1
 			done = True
 			state = "terminal"
+			tag = "oval"
 		# 判断某个表或者变量是否在这个数组中
 		elif pos_  in posArr:
 			reward = -1
 			done = True
 			state = "terminal"
-			hallIndex = posArr.index(pos_)
-			hallPos = posArr[hallIndex]
-			if hallIndex == 0 :
+			hellIndex = posArr.index(pos_)
+			hellPos = posArr[hellIndex]
+			if state == 0 :
 				self.canvas.delete(self.hell1)
 				self.hell1 = self.canvas.create_rectangle(
-					hallPos[0], hallPos[1],
-					hallPos[2], hallPos[3],
+					hellPos[0], hellPos[1],
+					hellPos[2], hellPos[3],
 					fill = "blue")
 
-			elif hallIndex == 1:
+			elif state == 1:
 				self.canvas.delete(self.hell2)
 				self.hell2 = self.canvas.create_rectangle(
-					hallPos[0], hallPos[1],
-					hallPos[2], hallPos[3],
+					hellPos[0], hellPos[1],
+					hellPos[2], hellPos[3],
 					fill = "blue")
+			tag = "hell"
 
 		else:
 			reward = 0
 			done = False
 			state = pos_
+			tag = "go"
 		pass
 
-		return state , reward , done
+		return state , reward , done, tag
 
 	def render(self):
 		self.update()
 		time.sleep(0.1)
-		
+
 		pass
 
 
@@ -251,7 +254,7 @@ def update():
 		while True:
 			env.render()
 			a = 1
-			s,r,d = env.step(a)
+			s,r,d,t= env.step(a)
 			if d:
 				break
 			pass
